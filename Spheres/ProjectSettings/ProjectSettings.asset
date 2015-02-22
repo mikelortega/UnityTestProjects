@@ -24,8 +24,8 @@ PlayerSettings:
   m_ActiveColorSpace: 0
   m_MTRendering: 1
   m_MobileMTRendering: 0
-  m_UseDX11: 0
   m_Stereoscopic3D: 0
+  m_GraphicsAPI: 0
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   displayResolutionDialog: 1
@@ -116,6 +116,12 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
+  AndroidIsGame: 1
+  androidEnableBanner: 1
+  m_AndroidBanners:
+  - width: 320
+    height: 180
+    banner: {fileID: 0}
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
   - m_BuildTarget: 
