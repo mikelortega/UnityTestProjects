@@ -1,3 +1,11 @@
+/Spheres/Temp
+/Spheres/Library
+/Spheres/*.csproj
+/Spheres/*.sln
+/Spheres/*.userprefs
+/Spheres/*.exe
+/Spheres/Test_Data
 /Triangle.NET/Temp
 /Triangle.NET/Library
-/Spheres/Library
+/Triangle.NET/*.sln
+/Triangle.NET/*.csproj
