@@ -704,7 +704,7 @@ namespace TriangleNet
         /// <param name="data">The input data.</param>
         private void TransferNodes(InputGeometry data)
         {
-            List<Vertex> points = data.points;
+            List<Point> points = data.points;
 
             this.invertices = points.Count;
             this.mesh_dim = 2;
