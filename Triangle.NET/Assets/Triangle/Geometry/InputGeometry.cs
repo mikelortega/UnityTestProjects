@@ -8,7 +8,7 @@ namespace TriangleNet.Geometry
 {
     using System;
     using System.Collections.Generic;
-    using TriangleNet.Geometry;
+    using TriangleNet.Data;
 
     /// <summary>
     /// The input geometry which will be triangulated. May represent a 
@@ -78,7 +78,7 @@ namespace TriangleNet.Geometry
         /// <summary>
         /// Gets the list of input points.
         /// </summary>
-        public IEnumerable<Point> Points
+        public List<Point> Points
         {
             get { return points; }
         }
@@ -138,7 +138,7 @@ namespace TriangleNet.Geometry
         /// <param name="boundary">Boundary marker.</param>
         public void AddPoint(double x, double y, int boundary)
         {
-            points.Add(new Point(x, y, boundary));
+            points.Add(new Vertex(x, y, boundary));
 
             bounds.Update(x, y);
         }
@@ -177,7 +177,7 @@ namespace TriangleNet.Geometry
                 throw new ArgumentException("Inconsitent use of point attributes.");
             }
 
-            points.Add(new Point(x, y, boundary) { attributes = attribs });
+            points.Add(new Vertex(x, y, boundary) { attributes = attribs });
 
             bounds.Update(x, y);
         }
