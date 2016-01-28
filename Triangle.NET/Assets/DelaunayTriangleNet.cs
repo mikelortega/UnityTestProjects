@@ -9,33 +9,24 @@ public class DelaunayTriangleNet : MonoBehaviour
     void Update()
     {
         var igeom = new TriangleNet.Geometry.InputGeometry(transform.childCount);
-        List<int> BoundIndexes = new List<int>();
-        List<int> HoleIndexes = new List<int>();
+        List<int> SegmentIndexes = new List<int>();
 
         for (int i = 0; i < transform.childCount; ++i)
         {
             igeom.AddPoint(transform.GetChild(i).position.x, transform.GetChild(i).position.z);
 
-            if (transform.GetChild(i).name == "Bound")
-                BoundIndexes.Add(i);
+            if (transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial.name == "SegmentMaterial")
+                SegmentIndexes.Add(i);
 
-            if (transform.GetChild(i).name == "Hole")
-                HoleIndexes.Add(i);
+            if (transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial.name == "HoleMaterial")
+                igeom.AddHole(transform.GetChild(i).position.x, transform.GetChild(i).position.z);
         }
 
-        if (BoundIndexes.Count > 1)
+        if (SegmentIndexes.Count > 1)
         {
-            for (int i=1; i < BoundIndexes.Count; ++i)
-                igeom.AddSegment(BoundIndexes[i - 1], BoundIndexes[i]);
-            igeom.AddSegment(BoundIndexes[BoundIndexes.Count - 1], BoundIndexes[0]);
-        }
-
-        if (HoleIndexes.Count > 1)
-        {
-            for (int i = 1; i < HoleIndexes.Count; ++i)
-                igeom.AddSegment(HoleIndexes[i - 1], HoleIndexes[i]);
-            igeom.AddSegment(HoleIndexes[HoleIndexes.Count - 1], HoleIndexes[0]);
-            igeom.AddHole(0.0f, 0.0f);
+            for (int i = 1; i < SegmentIndexes.Count; ++i)
+                igeom.AddSegment(SegmentIndexes[i - 1], SegmentIndexes[i]);
+            igeom.AddSegment(SegmentIndexes[SegmentIndexes.Count - 1], SegmentIndexes[0]);
         }
 
         TriangleNet.Mesh mesh = new TriangleNet.Mesh();
