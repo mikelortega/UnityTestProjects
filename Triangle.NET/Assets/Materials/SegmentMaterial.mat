@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BoundMaterial
+  m_Name: SegmentMaterial
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _LIGHTMAPPING_REALTIME _UVSEC_UV1
   m_LightmapFlags: 5
@@ -89,12 +89,16 @@ Material:
         second: 0
       data:
         first:
+          name: _Cutoff
+        second: 0.5
+      data:
+        first:
           name: _AlphaTestRef
-        second: .5
+        second: 0.5
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: 0.02
       data:
         first:
           name: _ZWrite
@@ -143,7 +147,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .241349488, g: .911764681, b: .440162241, a: 1}
+        second: {r: 0.24134949, g: 0.9117647, b: 0.44016224, a: 1}
       data:
         first:
           name: _EmissionColorUI

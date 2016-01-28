@@ -32,13 +32,11 @@ public class DelaunayTriangleNet : MonoBehaviour
         TriangleNet.Mesh mesh = new TriangleNet.Mesh();
         mesh.Triangulate(igeom);
 
-        float y = 0.0f;
         foreach (TriangleNet.Data.Triangle t in mesh.Triangles)
         {
-            Debug.DrawLine(new Vector3((float)t.vertices[0].x, y, (float)t.vertices[0].y), new Vector3((float)t.vertices[1].x, y, (float)t.vertices[1].y));
-            Debug.DrawLine(new Vector3((float)t.vertices[1].x, y, (float)t.vertices[1].y), new Vector3((float)t.vertices[2].x, y, (float)t.vertices[2].y));
-            Debug.DrawLine(new Vector3((float)t.vertices[2].x, y, (float)t.vertices[2].y), new Vector3((float)t.vertices[0].x, y, (float)t.vertices[0].y));
-            y += 0.5f;
+            Debug.DrawLine(transform.GetChild(t.vertices[0].ID).position, transform.GetChild(t.vertices[1].ID).position);
+            Debug.DrawLine(transform.GetChild(t.vertices[1].ID).position, transform.GetChild(t.vertices[2].ID).position);
+            Debug.DrawLine(transform.GetChild(t.vertices[2].ID).position, transform.GetChild(t.vertices[0].ID).position);
         }
 
     }
