@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 15
+  serializedVersion: 16
   productGUID: 69443c2785d6753428647c67bec13f1b
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -157,10 +157,10 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.Company.ProductName
     Standalone: unity.DefaultCompany.Spheres
-    iOS: com.Company.ProductName
+    iPhone: com.Company.ProductName
     tvOS: com.Company.ProductName
   buildNumber:
-    iOS: 0
+    iPhone: 0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
@@ -531,18 +531,18 @@ PlayerSettings:
   webGLWasmStreaming: 0
   scriptingDefineSymbols: {}
   platformArchitecture:
-    iOS: 2
+    iPhone: 2
   scriptingBackend:
     Android: 0
-    Metro: 2
     Standalone: 0
     WP8: 2
     WebGL: 1
-    iOS: 0
+    Windows Store Apps: 2
+    iPhone: 0
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild:
-    iOS: 1
+    iPhone: 1
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
