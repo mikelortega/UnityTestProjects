@@ -11,3 +11,9 @@
 /Triangle.NET/*.csproj
 /Triangle.NET/*.suo
 /Spheres/Logs
+/Triangle.NET/Logs
+/Triangle.NET/.vs
+/Triangle.NET/obj
+/Spheres/.vs
+/Spheres/.vscode
+/Spheres/obj
